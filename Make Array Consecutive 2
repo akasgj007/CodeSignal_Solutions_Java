@@ -1,0 +1,22 @@
+int solution(int[] statues) {
+    int dif, flag=0;
+        Arrays.sort(statues);
+        for(int i=0;i<statues.length;i++){
+            
+            if(i==0){
+                continue;
+            }
+            else{
+                dif = statues[i]-statues[i-1];
+                if(dif == 1){
+                    continue;
+                }
+                else{
+                    for(int j=statues[i-1];j<statues[i]-1;j++){
+                        flag+=1;
+                    }
+                }
+            }
+        }  
+    return flag;
+}
