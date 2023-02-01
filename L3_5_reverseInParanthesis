@@ -1,0 +1,105 @@
+String solution(String inputString) {
+   
+   StringBuilder sb = new StringBuilder();
+   Stack<StringBuilder> stack = new Stack<>();
+   
+   for(char c : inputString.toCharArray()){
+       
+       if(c == '('){
+           stack.push(new StringBuilder());
+       }
+       else if(c == ')'){
+           StringBuilder top = stack.pop().reverse();
+           if(!stack.isEmpty()){
+               stack.peek().append(top);
+           }
+           else{
+               sb.append(top);
+           }
+           
+       }
+       else if(!stack.isEmpty()){
+           stack.peek().append(c);
+       }
+       else{
+           sb.append(c);
+       }
+   }
+
+    return sb.toString();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Refer code to this website
+//https://www.onlinegdb.com/edit/mMxny3DZ7
+// or copy paste the below code in any compiler
+
+/******************************************************************************
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    String s = "foo(bar(baz))blim";
+	    StringBuilder ans = new StringBuilder();
+        Stack<StringBuilder> stack = new Stack<>();
+        
+        for (char c : s.toCharArray()) {
+            
+            if (c == '(') {
+                System.out.println("1.Before Push Stack : "+stack);
+                stack.push(new StringBuilder());
+                System.out.println("1.After Push Stack : "+stack);
+            }
+            
+            else if (c == ')') {
+                System.out.println("2.Before Pop Stack : "+stack);
+                StringBuilder top = stack.pop().reverse();
+                System.out.println("2.Top : "+top);
+                if (!stack.isEmpty()) {
+                    stack.peek().append(top);
+                    System.out.println("2.Not Empty Stack after POP : "+stack);
+                }
+                else {
+                    System.out.println("2.Empty Stack after POP : "+stack);
+                    ans.append(top);
+                    System.out.println("2.After appending reversed string to ans : "+ans);
+                }
+            }
+            
+            else if (!stack.isEmpty()){ 
+                System.out.println("3.Before Peek Stack : "+stack);
+                stack.peek().append(c);
+                System.out.println("3.After Peek Stack : "+stack);
+            }
+            
+            else {
+                System.out.println("4.Before append : "+ans);
+                ans.append(c);
+                System.out.println("4.After append : "+ans);
+            }
+        }
+        System.out.print(ans.toString());
+	}
+}
+
+
+
+*******************************************************************************/
