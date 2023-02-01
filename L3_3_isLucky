@@ -1,0 +1,21 @@
+boolean solution(int n) {
+    String s = Integer.toString(n);
+    
+    String first = s.substring(0,s.length()/2);
+    String second = s.substring(s.length()/2,s.length());
+    
+    int firstSum=0, secondSum=0;
+    
+    System.out.println(first+" - "+second);
+    
+    for(int i=0;i<first.length();i++){
+        firstSum+= Integer.parseInt(String.valueOf(first.charAt(i)));
+    }
+    
+    for(int i=0;i<second.length();i++){
+        secondSum+= Integer.parseInt(String.valueOf(second.charAt(i)));
+    }
+    
+    if(firstSum==secondSum) return true;
+    else return false;
+}
