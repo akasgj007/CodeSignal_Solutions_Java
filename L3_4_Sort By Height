@@ -1,0 +1,25 @@
+int[] solution(int[] a) {
+
+    int b[] = new int[a.length];
+		List<Integer> list = new ArrayList<>();
+		
+		for(int i=0;i<a.length;i++){
+            if(a[i] == -1) b[i] = -1;
+            else{
+              b[i] = 0;
+              list.add(a[i]);
+            } 
+       }
+       
+       Collections.sort(list);
+       
+        int j=0;
+      for(int i=0;i<b.length;i++){
+          if(b[i]==0){
+              b[i] = list.get(j);
+              j++;
+          }
+      }
+      
+      return b;
+}
