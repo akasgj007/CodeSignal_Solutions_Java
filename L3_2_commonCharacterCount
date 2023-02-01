@@ -1,0 +1,25 @@
+int solution(String s1,String s2){
+    if(s1.length() > 0 && s2.length() > 0){
+        
+        List<Character> s1_list = new ArrayList<>();
+        List<Character> s2_list = new ArrayList<>();
+        int count=0;
+        
+        for(int i=0;i<s1.length();i++) s1_list.add(s1.charAt(i));
+        
+        for(int i=0;i<s2.length();i++) s2_list.add(s2.charAt(i));
+        
+        for(Character c1 : s1_list){
+            for(Character c2 : s2_list){
+                if(c1 == c2){
+                    count++;
+                    s2_list.remove(c1);
+                    break;
+                }
+            }
+        }
+        
+        return count;
+    }
+    return 0;
+}
