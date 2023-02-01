@@ -1,0 +1,29 @@
+boolean solution(String inputString) {
+    StringBuilder str = new StringBuilder();
+    int len = inputString.length();
+    if(len == 1){
+        return true;
+    }
+    else{
+        if(len%2==0){
+            str.append((inputString.substring((len/2),len)));
+            str.reverse();
+            if(inputString.substring(0,len/2).equals(str.toString())){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            str.append((inputString.substring((len/2)+1,len)));
+            str.reverse();
+            if(inputString.substring(0,len/2).equals(str.toString())){
+                return true;
+            }
+            else{
+                return false;
+            } 
+        }
+    }
+}
