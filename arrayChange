@@ -1,0 +1,15 @@
+int solution(int[] inputArray) {
+    
+    int count = 0;
+    int max = inputArray[0];
+    
+    for(int i=1;i<inputArray.length;i++){
+        if(inputArray[i]<=max){
+            count+=max-inputArray[i]+1;
+            inputArray[i] = max+1;
+        }
+        max = inputArray[i];    
+        }
+    
+    return count;
+}
