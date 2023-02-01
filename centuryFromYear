@@ -1,0 +1,10 @@
+int solution(int year) {
+    int q = year/100;
+    int r = year%100;
+    if(r==0){
+        return q; 
+    }
+    else{
+        return q+1;
+    }
+}
