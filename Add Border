@@ -1,0 +1,15 @@
+String[] solution(String[] picture) {
+    String result[] = new String[picture.length+2];
+    String border = "*".repeat(picture[0].length()+2);
+    result[0] = border;
+    result[result.length-1] = border;
+    int j = 0;
+    for(int i=1;i<result.length-1;i++){
+        result[i] = "*"+picture[j]+"*";
+        j++;
+    }
+    for(String s : result){
+        System.out.println(s);
+    }
+    return result;
+}
