@@ -1,0 +1,15 @@
+String[] solution(String[] inputArray) {
+    if(inputArray.length == 1) return inputArray;
+    int max = 0;
+    for(int i=0;i<inputArray.length;i++){
+        if(max<inputArray[i].length()){
+            max = inputArray[i].length();
+        }
+    }
+    List <String>list = new ArrayList<>();
+    for(String s : inputArray){
+        if(s.length()==max) list.add(s);
+    }
+    String [] str = list.toArray(new String[0]);
+    return str;
+}
