@@ -1,0 +1,9 @@
+boolean solution(int yourLeft, int yourRight, int friendsLeft, int friendsRight) {
+    if(yourLeft+yourRight != friendsLeft+friendsRight){
+        return false;
+    }
+    else{
+        if((yourLeft == friendsLeft) || (yourLeft == friendsRight)){return true;}
+        else return false;
+    }
+}
