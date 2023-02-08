@@ -1,0 +1,10 @@
+boolean solution(int n) {
+    int r,q;
+    while(n>0){
+        q = n/10;
+        r = n%10;
+        if(r%2!=0) return false;
+        n = q;
+    }
+    return true;
+}
