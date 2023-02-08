@@ -1,0 +1,12 @@
+boolean solution(String name) {
+   if(Character.isWhitespace(name.charAt(0)) || Character.isDigit(name.charAt(0))) return false;
+   else{
+       StringBuilder sb = new StringBuilder();
+       for(char ch : name.toCharArray()){
+           if(Character.isLetter(ch) || Character.isDigit(ch) || ch=='_'){
+               sb.append(ch);
+           }
+       }
+       return sb.length()==name.length();
+   }
+}
