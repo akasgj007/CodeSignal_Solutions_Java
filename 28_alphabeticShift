@@ -1,0 +1,14 @@
+String solution(String inputString) {
+    StringBuilder sb = new StringBuilder();
+    for(char ch : inputString.toCharArray()){
+        int c = (int)ch;
+        if(c == 122){
+            sb.append('a');
+        }
+        else{
+            sb.append((char)(c+1));
+        }
+    }
+    
+    return sb.toString();
+}
