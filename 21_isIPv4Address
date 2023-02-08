@@ -1,0 +1,21 @@
+boolean solution(String inputString) {
+    String str[] = inputString.split("[.]");
+    if(str.length!=4 || (inputString.charAt(inputString.length()-1) == ('.'))) return false;
+    for(int i=0;i<str.length;i++){
+       try{
+         if(
+            str[i].equals("") || 
+            Integer.parseInt(str[i])<0 || 
+            Integer.parseInt(str[i])>255 ||
+            (str[i].charAt(0) =='0' && str[i].length()>1) 
+         ) return false;
+           
+       } 
+       catch(Exception e){
+           return false;
+       }
+        System.out.println(str[i]);
+    }
+    
+    return true;
+}
