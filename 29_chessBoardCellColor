@@ -1,0 +1,47 @@
+boolean solution(String cell1, String cell2) {
+    // 0 1 0 1 0 1 0 1
+    // 1 0 1 0 1 0 1 0 
+    // 0 1 0 1 0 1 0 1 
+    // 1 0 1 0 1 0 1 0 
+    // 0 1 0 1 0 1 0 1
+    // 1 0 1 0 1 0 1 0 
+    // 0 1 0 1 0 1 0 1 
+    // 1 0 1 0 1 0 1 0 
+    
+    Integer b[] = new Integer[]{0,1,0,1,0,1,0,1};
+    Integer w[] = new Integer[]{1,0,1,0,1,0,1,0};
+    
+    List<List<Integer>> board = new ArrayList<>();
+    
+    for(int i=1;i<=8;i++){
+        if(i%2==0) board.add(Arrays.asList(w));
+        else board.add(Arrays.asList(b));
+    }
+    
+    //System.out.println(board);
+    Map<String,Integer> hm = new HashMap<>();
+    Integer zero = 0;
+    Integer one = 1;
+    Integer lastEntried = 0;
+    for(char c='A';c<='H';c++){
+        for(int n=1;n<=8;n++){
+            StringBuilder sb = new StringBuilder();
+            sb.append(c);
+            sb.append(n);
+            if(lastEntried == 0){
+                if(n%2==0) hm.put(sb.toString(),one);
+                else hm.put(sb.toString(),zero);
+            }
+            else{
+                if(n%2!=0) hm.put(sb.toString(),one);
+                else hm.put(sb.toString(),zero);
+            }
+            System.out.println(sb.toString()+" = "+hm.get(sb.toString()));
+        }
+        if(lastEntried == 0) lastEntried = 1;
+        else lastEntried = 0;
+    }
+   
+    return hm.get(cell1) == hm.get(cell2);
+    
+}
