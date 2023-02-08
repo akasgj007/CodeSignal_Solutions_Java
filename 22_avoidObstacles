@@ -1,0 +1,50 @@
+int solution(int[] inputArray) {
+   Arrays.sort(inputArray);
+   int res;
+   for(int i=1;;i++){
+        res=0;
+        for(int a : inputArray){
+            if(a%i==0) break;
+            else res++;
+            if(res == inputArray.length) return i;
+        }
+   }
+}
+
+
+
+
+
+/*// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int[] arr= {5,3,6,7,9};
+        int sol;
+        boolean flag=false;
+        System.out.println(arr.length);
+        Arrays.sort(arr);
+        for(int i=1;;i++){
+            sol=0;
+            for(int x : arr){
+                System.out.println("x = "+x);
+                System.out.println("***** i = "+i);
+                if(x%i==0) {
+                 System.out.println(x+" % "+i+" == 0");
+                 System.out.println("-----------------");
+                 break;   
+                }
+                else{
+                    sol++;
+                    System.out.println("sol = "+sol);
+                }
+                if(sol == arr.length){
+                    flag = true;
+                  System.out.println("i = "+i);  
+                } 
+            }
+            if(flag) break;
+        }
+    }
+}*/
